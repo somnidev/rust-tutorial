@@ -31,3 +31,48 @@ fn main() {
 }
 ```
 
+## Rust Tools
+
+
+### Cargo
+
+Create a new Rust project using Cargo.
+
+```bash
+cargo new tutorial01
+```
+
+Use Cargo to compile the project.
+
+```bash
+cargo build
+```
+
+Now you can run the program.
+
+```bash
+./target/debug/tutorial01
+```
+
+Or you can simply do all that stuff using one command.
+
+```bash
+cargo run
+```
+
+You can use the `cargo check` command if you want to check if the source code compiles without errors.
+
+Cleanup and remove `target` directory.
+
+```bash
+cargo clean
+```
+
+### Rustfmt
+
+If you wanna format your code, you can use `rustfmt`.
+
+```bash
+rustfmt src/main.rs
+```
+
