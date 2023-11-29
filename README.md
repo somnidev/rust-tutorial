@@ -1,4 +1,4 @@
-# Rust Tutorial
+# Rest tutorial
 
 ## Introduction
 
@@ -76,3 +76,98 @@ If you wanna format your code, you can use `rustfmt`.
 rustfmt src/main.rs
 ```
 
+## Variables, Constants and Shadowing
+
+### Create a variable
+
+The first thing we need to understand
+here is that rust is a statically
+and strongly typed programing language.
+What that means
+is that when you define a variable, it's
+going to be given a type.
+
+We have implicit and explicit types.
+
+```rust
+fn main() {
+    let x = 4;
+    println!("x is: {}", x);
+}
+```
+
+### Variables are immutable
+
+But we cannot reasign `x`.
+
+```rust
+fn main() {
+    let x = 4;
+    println!("x is: {}", x);
+    x = 5;
+}
+```
+
+Now let's run that.
+
+```bash
+cargo run
+   Compiling tutorial01 v0.1.0 (/Users/me/dev/src/rust/rust-tutorial/tutorial01)
+error[E0384]: cannot assign twice to immutable variable `x`
+ --> src/main.rs:4:5
+  |
+2 |     let x = 4;
+  |         -
+  |         |
+  |         first assignment to `x`
+  |         help: consider making this binding mutable: `mut x`
+3 |     println!("x is: {}", x);
+4 |     x = 5;
+  |     ^^^^^ cannot assign twice to immutable variable
+```
+
+Now we get an error.
+
+Anyways, the reason we're getting this error
+is because by default in rust, all variables that we define are immutable.
+Now, immutable just means we cannot change them.
+
+### Reassgning a variable
+
+Strange, but you can create a new variable with the same name `x`.
+
+```rust
+fn main() {
+    let mut x = 4;
+    println!("x is: {}", x);
+    let x = x + 1;
+    println!("x is: {}", x);
+}
+```
+
+### Shadowing
+
+Nested scopes allow to shadow a variable.
+
+```rust
+fn main() {
+    let mut x = 4;
+    println!("x is: {}", x);
+    {
+        let x = 2;
+        println!("x is: {}");
+    }
+    let x = x + 1;
+    println!("x is: {}", x);
+}
+```
+
+### Constants
+
+```rust
+fn main() {
+    const SECONDS_IN_MINUTE: u32 = 60;
+    println!("{}", SECONDS_IN_MINUTE);
+}
+```
+ 
