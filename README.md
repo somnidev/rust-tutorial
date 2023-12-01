@@ -1,4 +1,4 @@
-# Rest tutorial
+# Rust Tutorial
 
 ## Introduction
 
