@@ -332,3 +332,7 @@ let a: [i32; 5] = [1, 2, 3, 4, 5];
 
 Here, i32 is the type of each element. After the semicolon, the number 5 indicates the array contains five elements.
 
+## Console Input
+
+A package or library in Rust is referred to as a _crate_. And within those packages or libraries or crates, we have something called a module, which is a specific piece of functionality. For example, here we're going to use the IO module.
+
